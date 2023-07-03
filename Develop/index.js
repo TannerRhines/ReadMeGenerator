@@ -6,14 +6,71 @@ const fs = require('fs');
 
 const generateMarkdown = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
-const questions = [];
+inquirer.prompt([
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+    {
+        type: "input",
+        message: 'What is the title of the Project?',
+        name: 'title',
+    },
 
-// TODO: Create a function to initialize app
-function init() {}
+    {
+        type: "input",
+        message: 'Enter a description for the project:',
+        name: 'description',
+    },
 
-// Function call to initialize app
-init();
+    {
+        type: "input",
+        message: 'What installation instructions are needed for project?',
+        name: 'installation',
+    },
+
+    {
+        type: "input",
+        message: 'What is the app used for?',
+        name: 'usage',
+    },
+
+    {
+        type: "input",
+        message: 'What are the tests required?',
+        name: 'test',
+    },
+
+    {
+        type: "input",
+        message: 'Contributor(s) GitHub accounts associated with this project?',
+        name: 'contributors',
+    },
+
+    {
+        type: "list",
+        message: 'What license will be used?',
+        name: 'license',
+        choices: ['MIT', 'GNU'],
+    },
+
+
+    {
+        type: "input",
+        message: 'What is your GitHub username?',
+        name: 'username',
+    },
+
+    {
+        type: "input",
+        message: 'What is your email?',
+        name: 'email',
+    },
+])
+    .then((data) => {
+        // Uses provided feedback 
+        fs.writeFile('README.md', generateMarkdown(data),
+            error => {
+                if (error) {
+                    console.log('Please answer all the questions')
+                }
+                console.log('README generated successfully')
+            })
+    })
