@@ -1,8 +1,8 @@
 # 
   
-  ReadMe Generator
+  readme generator
   ## Description
-  a simple command line tool to generate a readme file
+  a simple command line tool to generate a readme 
 
   ## Table of Contents
   -[Installation](##Installation)
@@ -14,13 +14,13 @@
   MIT
 
   ## Installation
-  run the index.js file in an intergrated terminal
+  none
 
   ## Data Usage
-  to generate a readme file 
+  generating a read me file 
 
   ## Tests Required
-  n/a
+  none
 
  
   # Contact Info

@@ -2,7 +2,7 @@
 // If there is no license, return an empty string
 
 
-
+// renders the desired license
 function renderLicenseSection(license) {
   if (data.license === MIT) {
     `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
@@ -13,7 +13,7 @@ function renderLicenseSection(license) {
 
 };
 
-
+// this function adds the markdown to the file 
 function generateMarkdown(data) {
   return `# 
   
